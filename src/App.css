@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
 .app {
-  font-family: Arial, sans-serif;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
   line-height: 1.6;
   margin: 0;
   padding-top: 80px; 

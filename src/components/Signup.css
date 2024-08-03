@@ -1,8 +1,6 @@
-
 body {
   overflow-x: hidden; 
 }
-
 .signupmain {
   width: 100vw;
   height: fit-content; 
@@ -26,7 +24,6 @@ body {
   background-color: #9be5aa;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   width: 100%;
-  transition: all 0.3s ease-in-out;
 
 }
 
@@ -84,10 +81,10 @@ body {
 
 
 .signup-container button {
+  width: 100%;
   padding: 10px;
-  font-size: 16px;
-  color: #fff;
-  background-color: #007bff;
+  background-color: #4caf50;
+  color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -95,15 +92,13 @@ body {
 }
 
 .signup-container button.google-btn {
-  background-color: #db4437;
-}
-
-.signup-container button:hover {
-  background-color: #0056b3;
-}
-
-.signup-container button.google-btn:hover {
-  background-color: #c23321;
+    display: inline-block;
+    background-color: #4285f4;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 
