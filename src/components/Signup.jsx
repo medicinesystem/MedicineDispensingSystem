@@ -62,7 +62,7 @@ const SignUp = () => {
   };
 
   const handlePrivacyPolicyClick = () => {
-    navigate('/privacy'); 
+    navigate('/Terms'); 
   };
 
   return (
@@ -112,7 +112,7 @@ const SignUp = () => {
           </label>
           <label className="terms">
             <input type="checkbox" name="terms" checked={formData.terms} onChange={handleChange} />
-            I agree to the <a href="#" onClick={handlePrivacyPolicyClick}>privacy and policy</a>
+            I agree to the <a href="#" onClick={handlePrivacyPolicyClick}>terms and conditions</a>
           </label>
           {errors.terms && <p className="error">{errors.terms}</p>}
           <button type="submit">Sign Up</button>
