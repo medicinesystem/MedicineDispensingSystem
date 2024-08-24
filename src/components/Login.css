@@ -1,30 +1,40 @@
-
 body {
   overflow-x: hidden; 
 }
 
-.loginmain {
-  width: 100vw;
-  height: fit-content; 
-  background-image: url('../assets/bgphoto.jpg');
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  z-index: -1;
+.component {
+  background-color: #9be5aa;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow: hidden; 
 }
+
+.loginmain {
+  width: 80vw;
+  height: 100vh; 
+  background: linear-gradient(to bottom,#838ef1, #128a51, #838ef1 );
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(20px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+  border-radius: 0 0 50px 50px;
+  clip-path: inset(0 0 0 0 round 300px); 
+}
+
 .form-container {
   max-width: 400px;
-  margin: 0 auto;
+  width: 100%;
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 10px;
-  background-color: #9be5aa;
+  background-image: url('../assets/bgphoto.png'); 
+  background-size: cover;
+  background-position: center;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  width: 100%;
+  color: rgb(233, 247, 234);
+  margin-bottom: 40px;
+  position: relative; 
 }
 
 h2 {
@@ -47,6 +57,10 @@ input[type="password"] {
   padding: 8px;
   margin-top: 5px;
   box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.8);
+  border: none;
+  border-radius: 5px;
+  min-height: 40px;
 }
 
 .error {
@@ -55,20 +69,11 @@ input[type="password"] {
   margin-top: 5px;
 }
 
-.remember-me {
-  display: flex;
-  align-items: center;
-}
-
-.remember-me input {
-  margin-right: 5px;
-}
-
 button[type="submit"] {
   width: 100%;
   padding: 10px;
   background-color: #4caf50;
-  color: white;
+  color: rgb(242, 238, 238);
   border: none;
   border-radius: 5px;
   cursor: pointer;
@@ -83,6 +88,7 @@ button[type="submit"]:disabled {
   display: block;
   text-align: center;
   margin-top: 10px;
+  color: #f4fef5;
 }
 
 .social-login {
@@ -98,8 +104,8 @@ button[type="submit"]:disabled {
   border: none;
   border-radius: 5px;
   cursor: pointer;
+  margin-top: 20px;
 }
-
 
 @media (max-width: 600px) {
   .form-container {

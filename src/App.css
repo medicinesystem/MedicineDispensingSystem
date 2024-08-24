@@ -13,3 +13,36 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+body {
+  font-size: 16px;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+}
+
+
+@media (max-width: 768px) {
+  .container {
+    width: 90%;
+  }
+
+  body {
+    font-size: 14px;
+  }
+}
+
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 10px;
+  }
+
+  body {
+    font-size: 12px;
+  }
+}
+

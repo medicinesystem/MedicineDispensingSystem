@@ -1,9 +1,14 @@
-.about-us {
-  margin-bottom: 20px;
-  height: 350px;
-  width: 100vw;
+.center {
   display: flex;
-  margin-top: -19px; 
+  justify-content: center;
+  align-items: center;
+}
+.about-us {
+  margin-bottom: 18px;
+  height: 350px;
+  width: 80vw; 
+  display: flex;
+  margin-top: 0px; 
   position: relative;
   flex-direction: column;
   justify-content: center;
@@ -14,6 +19,8 @@
   opacity: 0;
   transform: translateY(20px);
   transition: opacity 1s ease-out, transform 1s ease-out;
+  border-radius: 0 0 50px 50px;
+  clip-path: inset(0 0 0 0 round 200px); 
 }
 
 .about-us::before {

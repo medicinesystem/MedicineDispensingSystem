@@ -62,10 +62,11 @@ const SignUp = () => {
   };
 
   const handlePrivacyPolicyClick = () => {
-    navigate('/Terms'); 
+    navigate('/Term'); 
   };
 
   return (
+    <div className="maincontainer">
     <div className='signupmain'>
       <div className="signup-container">
         <h2>Sign Up</h2>
@@ -119,6 +120,7 @@ const SignUp = () => {
           <button type="button" className="google-btn">Sign up with Google</button>
         </form>
       </div>
+    </div>
     </div>
   );
 };
