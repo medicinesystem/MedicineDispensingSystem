@@ -117,7 +117,6 @@ const SignUp = () => {
           </label>
           {errors.terms && <p className="error">{errors.terms}</p>}
           <button type="submit">Sign Up</button>
-          <button type="button" className="google-btn">Sign up with Google</button>
         </form>
       </div>
     </div>
