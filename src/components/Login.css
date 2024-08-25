@@ -10,9 +10,9 @@ body {
 }
 
 .loginmain {
-  width: 80vw;
+  width: 70vw;
   height: 100vh; 
-  background: linear-gradient(to bottom,#838ef1, #128a51, #838ef1 );
+  background-color:#82cc91 ;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,12 +26,10 @@ body {
   max-width: 400px;
   width: 100%;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
   background-image: url('../assets/bgphoto.png'); 
   background-size: cover;
   background-position: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: rgb(233, 247, 234);
   margin-bottom: 40px;
   position: relative; 

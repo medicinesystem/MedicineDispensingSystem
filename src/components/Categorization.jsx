@@ -2,17 +2,19 @@ import React from 'react';
 import { useUser } from './UserContext';
 
 const Categorization = () => {
-  const { user } = useUser();  // Get user from UserContext
+  const { user } = useUser();  
 
   return (
-    <div>
+    <div className="categorizationcontainer">
+    <div className='user'>
       <h1>Categorization Page</h1>
       {user ? (
-        <p>Hello, {user.displayName || 'User'}!</p>  // Display user name or fallback to 'User'
+        <p>Hello, {user.displayName || 'User'}!</p>  
       ) : (
         <p>Loading user information...</p>
       )}
-      {/* Your categorization page content */}
+    </div>
+
     </div>
   );
 };

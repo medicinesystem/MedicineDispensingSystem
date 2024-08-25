@@ -8,27 +8,25 @@ body {
   align-items: center;
 }
 .signupmain {
-  width: 100vw;
+  width: 70vw;
   height: fit-content; 
-  background: linear-gradient(to bottom,#838ef1, #128a51, #838ef1 );
+  background-color:#82cc91 ;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden; 
-  border-radius: 0 0 50px 50px;
+  border-radius: 0 0 60px 60px;
   clip-path: inset(0 0 0 0 round 300px); 
 }
 
 .signup-container {
   max-width: 400px;
   padding: 20px;
-  border: 1px solid #ccc;
   border-radius: 10px;
   background-image: url('../assets/bgphoto.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   color: rgb(215, 254, 217);
   width: 100%;
 }

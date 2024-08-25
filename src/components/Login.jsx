@@ -9,7 +9,7 @@ const LoginForm = () => {
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate(); 
-  const { setUser } = useUser();  // Get setUser from UserContext
+  const { setUser } = useUser(); 
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -51,7 +51,7 @@ const LoginForm = () => {
       const user = result.user;
       console.log('Google Sign-In successful:', user);
       alert('Google Sign-In successful!');
-      setUser(user);  // Set user information in context
+      setUser(user); 
       navigate('/categorization'); 
     } catch (error) {
       console.error('Error during Google Sign-In:', error);

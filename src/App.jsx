@@ -11,7 +11,6 @@ import Term from './components/Term';
 import Categorization from './components/Categorization';
 import './App.css';
 
-// Layout component with conditional rendering
 const Layout = ({ children }) => {
   const location = useLocation();
   const hideHeaderFooter = location.pathname === '/categorization';
