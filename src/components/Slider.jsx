@@ -6,7 +6,7 @@ import slider3 from '../assets/slider3.jpg';
 
 const sliderData = [
   {
-    title: 'Authorized drug distribution only Emphasizes the safety and prevention',
+    title: 'Authorized drug distribution only emphasizes the safety and prevention',
     paragraph: 'Emphasizes the safety and prevention aspect of the distribution system.Focuses on managing distribution and protecting against unauthorized sales.',
     image: slider1
   },

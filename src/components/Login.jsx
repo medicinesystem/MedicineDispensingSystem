@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { auth, googleProvider, signInWithPopup } from './firebase'; 
@@ -5,7 +6,7 @@ import { useUser } from './UserContext';
 import './Login.css';
 
 const LoginForm = () => {
-  const [formValues, setFormValues] = useState({ email: '', password: '' });
+  const [formValues, setFormValues] = useState({ username: '', password: '' });
   const [formErrors, setFormErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const navigate = useNavigate(); 
@@ -21,10 +22,8 @@ const LoginForm = () => {
 
   const validate = () => {
     let errors = {};
-    if (!formValues.email) {
-      errors.email = 'Required';
-    } else if (!/\S+@\S+\.\S+/.test(formValues.email)) {
-      errors.email = 'Invalid email format';
+    if (!formValues.username) {
+      errors.username = 'Required';
     }
     if (!formValues.password) {
       errors.password = 'Required';
@@ -32,18 +31,53 @@ const LoginForm = () => {
     return errors;
   };
 
-  const handleSubmit = (e) => {
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   const errors = validate();
+  //   if (Object.keys(errors).length === 0) {
+  //     console.log('Form data', formValues);
+  //     navigate('/categorization'); 
+  //   } else {
+  //     setFormErrors(errors);
+  //   }
+  //   setIsSubmitting(false);
+  // };
+
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     const errors = validate();
     if (Object.keys(errors).length === 0) {
-      console.log('Form data', formValues);
-      navigate('/categorization'); 
+        try {
+            const response = await fetch('http://localhost:8000/api/login/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formValues),
+            });
+
+            if (response.ok) {
+                const data = await response.json();
+                console.log('Login successful:', data);
+                // Handle successful login, e.g., store user info, redirect, etc.
+                setUser(data.user);
+                navigate('/categorization');
+            } else {
+                const errorData = await response.json();
+                setFormErrors({ general: errorData.detail || 'Login failed' });
+            }
+        } catch (error) {
+            console.error('Error during login:', error);
+            setFormErrors({ general: 'An unexpected error occurred' });
+        }
     } else {
-      setFormErrors(errors);
+        setFormErrors(errors);
     }
     setIsSubmitting(false);
-  };
+};
 
   const handleGoogleSignIn = async () => {
     try {
@@ -52,7 +86,7 @@ const LoginForm = () => {
       console.log('Google Sign-In successful:', user);
       alert('Google Sign-In successful!');
       setUser(user); 
-      navigate('/categorization'); 
+      navigate(''); 
     } catch (error) {
       console.error('Error during Google Sign-In:', error);
     }
@@ -65,17 +99,17 @@ const LoginForm = () => {
         <div className="form-container">
           <h2>Login</h2>
           <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="email">Email:</label>
+          <div className="form-group">
+              <label htmlFor="username">Username:</label>
               <input
-                type="email"
-                id="email"
-                name="email"
-                value={formValues.email}
+                type="text"
+                id="username"
+                name="username"
+                value={formValues.username}
                 onChange={handleChange}
-                placeholder="Enter your email"
+                placeholder="Enter your username"
               />
-              {formErrors.email && <div className="error">{formErrors.email}</div>}
+              {formErrors.username && <div className="error">{formErrors.username}</div>}
             </div>
 
             <div className="form-group">
@@ -107,3 +141,8 @@ const LoginForm = () => {
 };
 
 export default LoginForm;
+
+
+
+
+
